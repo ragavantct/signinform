@@ -8,6 +8,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+
+// 🔥 Firebase import (TOP la irukanum)
+import { Auth, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-signin',
@@ -27,13 +31,29 @@ import { CommonModule } from '@angular/common';
 export class SigninComponent {
 
   signInForm!: FormGroup;
-  submitted = false; 
+  submitted = false;
 
-  constructor(private fb: FormBuilder) {
+  //  BOTH FormBuilder + Auth inject 
+  constructor(private fb: FormBuilder, private auth: Auth, private router: Router) {
     this.signInForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
+  }
+
+  //  Google Login Function
+  loginWithGoogle() {
+    const provider = new GoogleAuthProvider();
+
+    signInWithPopup(this.auth, provider)
+      .then((result) => {
+        console.log(result.user);
+        alert("Welcome " + result.user.displayName);
+        this.router.navigate(['/testing']);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   onLogin() {
@@ -43,14 +63,15 @@ export class SigninComponent {
       console.log(this.signInForm.value);
     }
   }
+
   onForgotPassword() {
-  const email = this.signInForm.get('email')?.value;
+    const email = this.signInForm.get('email')?.value;
 
-  if (!email) {
-    alert("Please enter your email first ");
-    return;
+    if (!email) {
+      alert("Please enter your email first ");
+      return;
+    }
+
+    alert("Password reset link sent to " + email);
   }
-
-  alert("Password reset link sent to " + email );
-}
 }
