@@ -1,0 +1,97 @@
+/* Full screen center */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Card */
+.card {
+  width: 360px;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Titles */
+h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #1e3c72;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Inputs */
+.full {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  height: 45px;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Forgot password */
+.forgot {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.forgot a {
+  font-size: 13px;
+  color: #2a5298;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Signup text */
+p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+p a {
+  color: #1e3c72;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,97 @@
+/* Full page center */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Card */
+.card {
+  width: 380px;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Title */
+h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #203a43;
+  font-weight: 600;
+}
+
+/* Inputs */
+.full {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+/* Remove unnecessary <br> spacing effect */
+br {
+  display: none;
+}
+
+/* Buttons container */
+button {
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+/* Clear button */
+button[color="warn"] {
+  background: #ff4d4d !important;
+  color: white !important;
+}
+
+/* Signup button */
+button[color="primary"] {
+  background: #203a43 !important;
+  color: white !important;
+}
+
+/* Hover effect */
+button:hover {
+  transform: translateY(-2px);
+  transition: 0.3s;
+}
+
+/* Bottom text */
+p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+p a {
+  color: #2c5364;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
